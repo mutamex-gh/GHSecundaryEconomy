@@ -1,0 +1,19 @@
+database:
+  type: 'sqlite' # Tipos: 'sqlite' e 'mysql'
+  mysql:
+    address: 'localhost:3306'
+    username: 'root'
+    password: ''
+    database: 'database'
+
+messages:
+  balance: "&e&lGOLD: &7Seu saldo é de {balance} gold(s)!"
+  set-balance: "&e&lGOLD: &7Foram setados {amount} de gold para o jogador {player}!"
+  target-balance: "&e&lGOLD: &7O jogador {player} tem {balance} gold(s)!"
+  incorrect-usage: "&cJogador ou valor invalido! Tente novamente."
+  pay-message: "&e&lGOLD: &7Você enviou {amount} gold para o jogador {player}"
+  receive-message: "&e&lGOLD: &7Você recebeu {amount} gold do jogador {player}"
+  no-gold: "&e&lGOLD: &7Você não a quantia necessaria para realizar a transferencia!"
+  no-gold-to-buy: "&e&lGOLD: &7Saldo insuficiente para esta ação!"
+  success-buy: "&e&lGOLD: &aItem comprado com sucesso por {gold} golds!"
+

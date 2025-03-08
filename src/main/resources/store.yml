@@ -1,0 +1,47 @@
+#
+#            GHSecundaryEconomy
+#       Github: gihub.com/mutamex-gh
+#
+# Crie itens personalizados com comandos personalizados
+# lembre-se que, todos os comandos que tiver na lista
+# serão executados.
+#
+store-items:
+  i1:
+    material: IRON_INGOT
+    name: "&f&lVIP FERRO"
+    lore:
+      - "&7Clique para comprar uma"
+      - "&7key vip &f&lFERRO&7!"
+      - " "
+      - "&fIsso lhe custará &e500 &fgolds!"
+    slot: 12
+    price: 500
+    command:
+      - "give {player} iron_ingot 1"
+
+  i2:
+    material: GOLD_INGOT
+    name: "&e&lVIP OURO"
+    lore:
+      - "&7Clique para comprar uma"
+      - "&7key vip &e&lOURO&7!"
+      - " "
+      - "&fIsso lhe custará &e1000 &fgolds!"
+    slot: 13
+    price: 1000
+    command:
+      - "give {player} iron_ingot 1"
+
+  i3:
+    material: DIAMOND
+    name: "&b&lVIP DIAMANTE"
+    lore:
+      - "&7Clique para comprar uma"
+      - "&7key vip &b&lDIAMANTE&7!"
+      - " "
+      - "&fIsso lhe custará &e10k &fgolds!"
+    slot: 14
+    price: 10000
+    command:
+      - "give {player} iron_ingot 1"
