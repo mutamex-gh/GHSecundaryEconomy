@@ -19,10 +19,15 @@ public class SQLConnector {
     public static Connection connect() {
         String sqlType = ConfigDatabase.get(ConfigDatabase::TYPE);
 
+        String ADDRESS = ConfigDatabase.get(ConfigDatabase::ADDRESS);
+        String DATABASE = ConfigDatabase.get(ConfigDatabase::DATABASE);
+
         if (sqlType.equalsIgnoreCase("mysql")) {
+            String URL = "jdbc:mysql://" + ADDRESS + "/" + DATABASE + "?characterEncoding=UTF-8&useSSL=false";
+
             try {
                 return DriverManager.getConnection(
-                        ConfigDatabase.get(ConfigDatabase::URL),
+                        URL,
                         ConfigDatabase.get(ConfigDatabase::USERNAME),
                         ConfigDatabase.get(ConfigDatabase::PASSWORD)
                 );

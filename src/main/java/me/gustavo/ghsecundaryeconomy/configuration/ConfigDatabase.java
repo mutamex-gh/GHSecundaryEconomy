@@ -30,8 +30,6 @@ public final class ConfigDatabase implements ConfigurationInjectable {
     @ConfigField("mysql.password") private String PASSWORD;
     @ConfigField("mysql.database") private String DATABASE;
 
-    private final String URL = "jdbc:mysql://" + ADDRESS() + "/" + DATABASE() + "?characterEncoding=UTF-8&useSSL=false";
-
     public static <T> T get(Function<ConfigDatabase, T> function) {
         return function.apply(instance);
     }
