@@ -1,10 +1,9 @@
 # GHSecundaryEconomy
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/96daf66073b64cb6859f453c5cf5c638)](https://app.codacy.com/gh/mutamex-gh/GHSecundaryEconomy/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
-# Sobre o GHSecundaryEconomy
+# Sobre o plugin:
 - Plugin de /gold, como se fosse um cash, porém denominado de (gold);
 - Totalmente compativel com SQLite/MySQL
 - Itens criaveis no /gold shop, com recompensa via comando
-- 
 
 # Permissões
 Confira as permissões do plugin abaixo:
