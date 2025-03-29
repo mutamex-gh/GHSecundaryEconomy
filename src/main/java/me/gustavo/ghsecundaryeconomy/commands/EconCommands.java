@@ -125,12 +125,10 @@ public class EconCommands {
     public void goldTop(Context<Player> context) throws SQLException {
         val player = context.getSender();
 
-        List<String> topPlayers = sqlManager.getTopPlayers();
-
         player.sendMessage(ColorUtil.colored("&e-------------------------------"));
         player.sendMessage(ColorUtil.colored("&e&l              GOLD            "));
         player.sendMessage(ColorUtil.colored("&f    Top 10 jogadores mais ricos"));
-        for (String list : topPlayers) {
+        for (String list : sqlManager.getTopPlayers()) {
             player.sendMessage(ColorUtil.colored(list));
         }
         player.sendMessage(ColorUtil.colored("&e-------------------------------"));

@@ -5,7 +5,11 @@
 # Crie itens personalizados com comandos personalizados
 # lembre-se que, todos os comandos que tiver na lista
 # serão executados.
-#
+
+store-inventory:
+  inventory-name: "Gold Store"
+  inventory-slot: 27
+
 store-items:
   i1:
     material: IRON_INGOT

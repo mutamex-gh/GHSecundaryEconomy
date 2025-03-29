@@ -3,6 +3,7 @@ package me.gustavo.ghsecundaryeconomy.configuration.registry;
 import com.henryfabio.minecraft.configinjector.bukkit.injector.BukkitConfigurationInjector;
 import me.gustavo.ghsecundaryeconomy.GHSecundaryEconomy;
 import me.gustavo.ghsecundaryeconomy.configuration.ConfigDatabase;
+import me.gustavo.ghsecundaryeconomy.configuration.ConfigInventory;
 import me.gustavo.ghsecundaryeconomy.configuration.ConfigMessages;
 import me.gustavo.ghsecundaryeconomy.configuration.ConfigStoreSection;
 
@@ -20,7 +21,8 @@ public class ConfigRegistry {
         configurationInjector.injectConfiguration(
                 ConfigDatabase.instance(),
                 ConfigMessages.instance(),
-                ConfigStoreSection.instance()
+                ConfigStoreSection.instance(),
+                ConfigInventory.instance()
         );
     }
 }

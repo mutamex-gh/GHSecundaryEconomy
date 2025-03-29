@@ -2,6 +2,7 @@ package me.gustavo.ghsecundaryeconomy.listeners;
 
 import lombok.val;
 import me.gustavo.ghsecundaryeconomy.api.APISection;
+import me.gustavo.ghsecundaryeconomy.configuration.ConfigInventory;
 import me.gustavo.ghsecundaryeconomy.configuration.ConfigMessages;
 import me.gustavo.ghsecundaryeconomy.database.manager.SQLManager;
 import me.gustavo.ghsecundaryeconomy.inventory.StoreInventory;
@@ -31,6 +32,7 @@ public class CheckAndGive implements Listener {
 
         if (item == null) item = event.getCursor();
         if (item == null || item.getType() == Material.AIR) return;
+        if (event.getInventory().getTitle() != ConfigInventory.get(ConfigInventory::inventoryName)) return;
 
         APISection button = StoreButton.storeButton.get(ItemBuilder.getNBTTag(item, "storeitems"));
 
