@@ -32,9 +32,7 @@ public class CheckAndGive implements Listener {
         if (item == null) item = event.getCursor();
         if (item == null || item.getType() == Material.AIR) return;
 
-        String nbtTag = ItemBuilder.getNBTTag(item, "storeitems");
-        if (StoreButton.storeButton.get(nbtTag) == null) return;
-        APISection button = StoreButton.storeButton.get(nbtTag);
+        APISection button = StoreButton.storeButton.get(ItemBuilder.getNBTTag(item, "storeitems"));
 
         if(event.getClick().isLeftClick() || event.getClick().isRightClick()) {
             int balance = sqlManager.getBalance(player.getName());
@@ -69,5 +67,4 @@ public class CheckAndGive implements Listener {
             event.setCancelled(true);
         }
     }
-
 }

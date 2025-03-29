@@ -20,8 +20,36 @@ public class SQLManager {
                     "CREATE TABLE IF NOT EXISTS economy(" +
                             "uuid CHAR(36) PRIMARY KEY," +
                             "username TEXT NOT NULL," +
+                            "receipt INTEGER NOT NULL DEFAULT 1," +
                             "amount INTEGER NOT NULL DEFAULT 0)"
             );
+        }
+    }
+
+    public void setReceipt(String player, Integer status) throws SQLException {
+        try (PreparedStatement preparedStatement = connection.prepareStatement(
+                "UPDATE economy SET receipt = ? WHERE username = ?")) {
+
+            preparedStatement.setInt(1, status);
+            preparedStatement.setString(2, player);
+
+            preparedStatement.executeUpdate();
+        }
+    }
+
+    public int getReceipt(String player) throws SQLException {
+        try (PreparedStatement preparedStatement = connection.prepareStatement(
+                "SELECT receipt FROM economy WHERE username = ?")) {
+
+            preparedStatement.setString(1, player);
+
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    return resultSet.getInt("receipt");
+                } else {
+                    return 0;
+                }
+            }
         }
     }
 

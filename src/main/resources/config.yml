@@ -1,3 +1,7 @@
+#
+#            GHSecundaryEconomy
+#       Github: gihub.com/mutamex-gh
+#
 database:
   type: 'sqlite' # Tipos: 'sqlite' e 'mysql'
   mysql:
@@ -7,13 +11,28 @@ database:
     database: 'database'
 
 messages:
+  pay: "&e&lGOLD: &7Você enviou {amount} gold para o jogador {player}"
+  receive: "&e&lGOLD: &7Você recebeu {amount} gold do jogador {player}"
   balance: "&e&lGOLD: &7Seu saldo é de {balance} gold(s)!"
-  set-balance: "&e&lGOLD: &7Foram setados {amount} de gold para o jogador {player}!"
   target-balance: "&e&lGOLD: &7O jogador {player} tem {balance} gold(s)!"
-  incorrect-usage: "&cJogador ou valor invalido! Tente novamente."
-  pay-message: "&e&lGOLD: &7Você enviou {amount} gold para o jogador {player}"
-  receive-message: "&e&lGOLD: &7Você recebeu {amount} gold do jogador {player}"
-  no-gold: "&e&lGOLD: &7Você não a quantia necessaria para realizar a transferencia!"
-  no-gold-to-buy: "&e&lGOLD: &7Saldo insuficiente para esta ação!"
+  set-balance: "&e&lGOLD: &7Foram setados {amount} de gold para o jogador {player}!"
   success-buy: "&e&lGOLD: &aItem comprado com sucesso por {gold} golds!"
+  no-gold: "&e&lGOLD: &7Você não possui a quantia necessaria para realizar a transferencia!"
+  no-gold-to-buy: "&e&lGOLD: &7Saldo insuficiente para esta ação!"
+  change-mode-on: "&e&lGOLD: &7Você ativou o recebimento de gold!"
+  change-mode-off: "&e&lGOLD: &7Você desativou o recebimento de gold!"
+  receipt-off: "&e&lGOLD: &7O jogador {player} desativou o recebimento de gold!"
+  invalid-target: "&e&lGOLD: &7Você não pode enviar dinheiro para si mesmo!"
+  incorrect-usage: "&e&lGOLD: &7Jogador ou valor invalido! Tente novamente."
+  help:
+    - "&c&lComandos disponiveis para o gold:"
+    - "&f/gold > &7Veja seu saldo"
+    - "&f/gold <jogador> > &7Veja o saldo de um jogador"
+    - "&f/gold pay <jogador> <quantia> > &7Envia gold para um jogador"
+    - "&f/gold top > &7Veja os jogadores mais ricos do servidor"
+    - "&f/gold help > &7Veja os comandos disponiveis"
+    - "&f/gold store > &7Abre a loja de gold"
+    - "&f/gold toggle > &7Ativa/desativa o recebimento de gold"
+  help-to-admin:
+    - "&f/gold set <jogador> <quantia> > &7Seta os golds de um jogador"
 

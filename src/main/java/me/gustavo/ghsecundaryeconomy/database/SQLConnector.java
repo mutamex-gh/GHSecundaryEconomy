@@ -12,10 +12,6 @@ public class SQLConnector {
 
     private static GHSecundaryEconomy plugin;
 
-    public static void init(GHSecundaryEconomy pluginInstance) {
-        plugin = pluginInstance;
-    }
-
     public static Connection connect() {
         String sqlType = ConfigDatabase.get(ConfigDatabase::TYPE);
 
@@ -23,9 +19,9 @@ public class SQLConnector {
         String DATABASE = ConfigDatabase.get(ConfigDatabase::DATABASE);
 
         if (sqlType.equalsIgnoreCase("mysql")) {
-            String URL = "jdbc:mysql://" + ADDRESS + "/" + DATABASE + "?characterEncoding=UTF-8&useSSL=false";
-
             try {
+                String URL = "jdbc:mysql://" + ADDRESS + "/" + DATABASE + "?characterEncoding=UTF-8&useSSL=false";
+
                 return DriverManager.getConnection(
                         URL,
                         ConfigDatabase.get(ConfigDatabase::USERNAME),
@@ -34,6 +30,7 @@ public class SQLConnector {
             } catch (SQLException s) {
                 s.printStackTrace();
             }
+
         } else if (sqlType.equalsIgnoreCase("sqlite")) {
             if (!plugin.getDataFolder().exists()) {
                 plugin.getDataFolder().mkdirs();
@@ -42,6 +39,7 @@ public class SQLConnector {
             try {
                 File database = new File(plugin.getDataFolder(), "database.db");
                 String URL = "jdbc:sqlite:" + database.getAbsolutePath();
+
                 return DriverManager.getConnection(URL);
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -49,4 +47,9 @@ public class SQLConnector {
         }
         return null;
     }
+
+    public static void init(GHSecundaryEconomy pluginInstance) {
+        plugin = pluginInstance;
+    }
+
 }

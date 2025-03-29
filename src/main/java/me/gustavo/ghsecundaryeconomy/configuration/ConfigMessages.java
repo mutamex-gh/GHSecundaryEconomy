@@ -10,6 +10,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
+import java.util.List;
 import java.util.function.Function;
 
 @Getter
@@ -26,11 +27,15 @@ public final class ConfigMessages implements ConfigurationInjectable {
     @ConfigField("set-balance") private String setBalance;
     @ConfigField("target-balance") private String targetBalance;
     @ConfigField("incorrect-usage") private String incorrectUsage;
-    @ConfigField("pay-message") private String payMessage;
-    @ConfigField("receive-message") private String receiveMessage;
+    @ConfigField("pay") private String payMessage;
+    @ConfigField("receive") private String receiveMessage;
     @ConfigField("no-gold") private String noGold;
     @ConfigField("success-buy") private String successBuy;
     @ConfigField("no-gold-to-buy") private String noGoldToBuy;
+    @ConfigField("change-mode-off") private String changeModeToOff;
+    @ConfigField("change-mode-on") private String changeModeToOn;
+    @ConfigField("receipt-off") private String receiptOff;
+    @ConfigField("invalid-target") private String invalidTarget;
 
     public static <T> T get(Function<ConfigMessages, T> function) {
         return function.apply(instance);
